@@ -1,13 +1,16 @@
 #!/bin/bash
+
 i=1
-sum=0
 for a in $@
 do
   echo "Arg$i: $a"
   (( i++ ))
 done
 
-for ((i=1; i<=$#; i++))
+argarray=($@) # copy args array to var
+for (( i=1; i<$#; i++ ))
 do
-  echo -n $$i
+  sum=$(( ${argarray[$i-1]} + ${argarray[$i]} ))
+  echo -n "$sum "
 done
+echo $(( $1 + ${@: -1} )) # echo sum of first and last args
