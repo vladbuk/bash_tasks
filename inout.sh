@@ -1,11 +1,10 @@
 #!/bin/bash
 
-read -p "Input a filename: " filename
+#
+# ./inout.sh >/dev/null 2>/tmp/stderr
+#
 
-echo $filename
-
-cat << EOF > /tmp/$filename
-An old silent pond...
+poem="An old silent pond...
 A frog jumps into the pond,
 splash! Silence again.
 
@@ -15,9 +14,11 @@ into the chestnut.
 
 In the twilight rain
 these brilliant-hued hibiscus -
-A lovely sunset.
-EOF
+A lovely sunset."
 
-cat /tmp/$filename
+echo "Enter filename: " > /dev/tty
+IFS='' read -r filename
 
-echo "Task finished" >&2
+echo "$poem" | tee /tmp/$filename
+
+>&2 echo "Task finished"
