@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# run ./func_task.sh 5 6 1 3 9
+# ouput have to be:
+# 26
+# 37
+# 2
+# 10
+# 82
+
 multy () {
   m=$(( $1 * $1 ))
   echo $m
