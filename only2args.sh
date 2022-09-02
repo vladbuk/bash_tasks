@@ -1,7 +1,11 @@
 #!/bin/bash
 
-if [[ -z $2 ]] || [[ -n $3 ]]
+if [[ $# -lt 2 ]]
 then
-  echo "you need to set exactly 2 parameters"
-  exit 1
+  echo "$1"
+elif [[ $# -gt 2 && $# -lt 4 ]]
+then
+  echo "${@: -1}"
+else
+  echo "Invalid number of arguments"
 fi
