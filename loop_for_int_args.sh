@@ -6,7 +6,7 @@ for a in "${@}"
 do
   if [[ $a =~ $re ]]
   then
-    echo $a
+    #echo $a
     (( sum+=$a ))
   else
     echo "It needs only integer numbers" >&2
