@@ -4,11 +4,11 @@ case $1 in
   start)
     echo "Service started"
     sleep 9999
-    parpid=$!
+    #parpid=$!
   ;;
   stop)
     echo "Service stopped"
-    kill -15 $parpid
+    kill -15 $!
     #wait $parpid &>/dev/null
     killall sleep
     #kill -15 `pgrep -f "run_service.sh start"`
