@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Script name = "$0
+echo "PID = "$$
+
 myfunc() {
   for i in "$@"
   do
