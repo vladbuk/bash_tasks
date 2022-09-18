@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kill -n 15 $!
+kill $! &>/dev/null
